@@ -2,6 +2,7 @@ package com.mycompany.app.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
@@ -19,6 +20,37 @@ public class HomeController {
 		
 		return  "app/home/home2";
 	}
+	
+	@RequestMapping(value = "/home3")
+	public ModelAndView home3() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("home3");
+		
+		return mav;
+	}
+	
+	@RequestMapping(value="/hi")
+	public String hi() {
+		
+		return  "hi";
+	}
+	
+	@RequestMapping(value = "/login")
+	public String login() {
+		
+		return "app/login/login";
+	}
+	
+	@RequestMapping(value = "/xdmin")
+	public String xdmin() {
+		
+		return "app/xdmin/xdmin";
+	}
+	
+	
+	
+	
 	
 
 }
