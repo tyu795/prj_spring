@@ -7,33 +7,30 @@
      해서 관계적으로 해당 파일의 패스와 파일이름(확장자제외)
  	 그리고 dao 에서 namespace와 일치하여야 된다. -->
  	 	   
-<mapper namespace="com.mycompany.app.codegroup.CodeGroupMapper">
+<mapper namespace="com.mycompany.app.code.CodeMapper">
 
 
 										<!-- select 결과를 받을 객체 -->
-    <resultMap id="resultMapObj" type="com.mycompany.app.codegroup.CodeGroup"></resultMap>
+    <resultMap id="resultMapObj" type="com.mycompany.app.code.Code"></resultMap>
+    
     
     <select id="selectList" resultMap="resultMapObj">
     SELECT 
-    	seq,
-    	name
+    	name,
+    	codeGroup_seq
     FROM
-		codeGroup  
-	WHERE  
-		name LIKE CONCAT('%',#{shKeyword},'%')
+		code  
 	</select>
-
-	<select id="selectOne" resultMap="resultMapObj">
-    SELECT 
-    	seq,
-    	name
-    FROM
-    	codeGroup
-    WHERE 
-		seq = #{seq}
-	<!-- WHERE  
-		codeGroup LIKE CONCAT('%',#{shKeyword},'%')   -->
-	</select>
-			
+	
+<!-- 
+	<update id="update" resultMap = "resultMapObj">
+	UPDATE code
+		SET
+			name = "투썸",
+			codeGroup_seq = 1 
+		
+		WHERE seq = 1
+		</update>	
+	 -->		
 	
 </mapper> 
