@@ -7,24 +7,29 @@
      해서 관계적으로 해당 파일의 패스와 파일이름(확장자제외)
  	 그리고 dao 에서 namespace와 일치하여야 된다. -->
  	 	   
-<mapper namespace="com.mycompany.app.infra.codegroup.CodeGroupMapper">
+<mapper namespace="com.mycompany.app.infra.code.CodeMapper">
 
 
 										<!-- select 결과를 받을 객체 -->
-    <resultMap id="resultMapObj" type="com.mycompany.app.infra.codegroup.CodeGroup"></resultMap>
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.code.Code"></resultMap>
     
     
     <sql id="abc">
     	seq,
-    	name,
-    	delNy
+    	codeName,
+    	delNy,
+    	codeGroup_seq
     </sql>
     
     <select id="selectList" resultMap="resultMapObj">
 	    SELECT 
-	    	<include refid = "abc" />
-	    FROM
-			codeGroup  
+	    	a.seq,
+	    	a.codeName,
+	    	a.delNy,
+	    	a.codeGroup_seq,
+	    	b.name
+	    FROM code AS a
+	    LEFT JOIN codeGroup AS b ON b.seq = a.codeGroup_seq
 		
 	</select>
 
@@ -32,25 +37,28 @@
     SELECT 
     	<include refid = "abc" />
     FROM
-    	codeGroup
+    	code
     WHERE 
 		seq = #{seq}
 	</select>
 			
 			
 	<update id="update">
-    UPDATE codeGroup
+    UPDATE code
     SET
-    	name = #{name}
+    	codeName = #{codeName},
+    	codeGroup_seq = #{codeGroup_seq},
+    	delNy = #{delNy}
+    	
     WHERE 
 		seq = #{seq}
 	</update>		
 
 
 	<update id="uelete">
-    UPDATE codeGroup
+    UPDATE code
     SET
-    	delNy = 1
+    	delNy = IF(delNy = 1, '0','1')
     WHERE 
 		seq = #{seq}
 	</update>		
@@ -60,7 +68,7 @@
 
 	DELETE
 	FROM 
-		codeGroup
+		code
 	WHERE 
 		seq = #{seq}
 	</delete>
@@ -69,11 +77,15 @@
 	
 	<insert id = "insert">
 
-	INSERT INTO codeGroup(
-		name
+	INSERT INTO code(
+		codeName
+		,codeGroup_seq
+		,delNy
 	)	
 	values(
-		#{name}
+		#{codeName}
+		,#{codeGroup_seq}
+		,#{delNy}
 	)
 
 	</insert>

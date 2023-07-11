@@ -5,7 +5,12 @@ public class CodeVo {
 	private String seq;
 	private Integer shOption;
 	private String shKeyword;
-//-----
+	private String optCodeGroupName;
+	//-----
+	
+	
+
+
 	public String getSeq() {
 		return seq;
 	}
@@ -23,6 +28,12 @@ public class CodeVo {
 	}
 	public void setShKeyword(String shKeyword) {
 		this.shKeyword = shKeyword;
+	}
+	public String getOptCodeGroupName() {
+		return optCodeGroupName;
+	}
+	public void setOptCodeGroupName(String optCodeGroupName) {
+		this.optCodeGroupName = optCodeGroupName;
 	}
 	
 }

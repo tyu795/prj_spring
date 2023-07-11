@@ -6,6 +6,8 @@
 * License: https://bootstrapmade.com/license/
 */
 
+/* 노토산스
+font-family: 'Noto Sans KR', sans-serif; */
 
 /*--------------------------------------------------------------
 # General
@@ -17,24 +19,10 @@
   font-weight: 400;
   font-style: normal;
 }
-/* 
-@font-face {
-    font-family: 'Dovemayo_gothic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-} */
 
-@font-face {
-    font-family: 'omyu_pretty';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
+* {
   font-family: 'SUITE-Regular';
-  color: #272829;
+  /* color: #272829; */
 }
 
 a {
@@ -53,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'SUITE-Regular';
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -120,7 +108,7 @@ h6 {
   font-weight: 600;
   -moz-text-align-last: center;
   text-align-last: center;
-  font-family: 'SUITE-Regular';
+  font-family: "Poppins", sans-serif;
 }
 
 #header .profile h1 a,
@@ -297,7 +285,7 @@ h6 {
   color: #fff;
   margin-bottom: 50px;
   font-size: 26px;
-  font-family: 'SUITE-Regular';
+  font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
@@ -433,7 +421,7 @@ section {
 .facts .count-box p {
   padding: 15px 0 0 0;
   margin: 0 0 0 60px;
-  font-family: 'SUITE-Regular';
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   color: #122f57;
 }
@@ -444,7 +432,7 @@ section {
   margin-top: 20px;
   color: #122f57;
   font-size: 15px;
-  font-family: 'SUITE-Regular';
+  font-family: "Poppins", sans-serif;
   transition: ease-in-out 0.3s;
 }
 
@@ -468,7 +456,7 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: 'SUITE-Regular';
+  font-family: "Poppins", sans-serif;
   color: #050d18;
 }
 
@@ -512,7 +500,7 @@ section {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: 'SUITE-Regular';
+  font-family: "Poppins", sans-serif;
   color: #050d18;
   margin-bottom: 10px;
 }
@@ -594,7 +582,6 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  font-family: 'omyu_pretty';
 }
 
 .portfolio .portfolio-wrap::before {

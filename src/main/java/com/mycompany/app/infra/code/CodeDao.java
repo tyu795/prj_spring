@@ -15,34 +15,41 @@ public class CodeDao {
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.mycompany.app.infra.codegroup.CodeGroupMapper";
+	private static String namespace = "com.mycompany.app.infra.code.CodeMapper";
 	
-	public List<Code> selectList(CodeVo vo){
-		
-		return sqlSession.selectList(namespace + ".selectList", vo); 
-		}
 	
-		
-	public Code selectOne(CodeVo vo) { 
-		Code codeGroup = sqlSession.selectOne(namespace + ".selectOne",vo);
-		return codeGroup; 
-		}
-	
-	// 업데이트
-	public int update(Code dto) { 
-		return sqlSession.update(namespace + ".update",dto);
-		}
-	
-	// 삭제
-	public int delete(Code dto) {
-		return sqlSession.delete(namespace + ".delete",dto);
+	public List<Code> selectList(CodeVo vo) {
+		return sqlSession.selectList(namespace + ".selectList", vo);
 	}
-	
-	// 등록
+
+
+	public Code selectOne(CodeVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOne",vo);
+	}
+
+
 	public int insert(Code dto) {
+		
 		return sqlSession.insert(namespace + ".insert",dto);
 	}
-	
+
+	// 삭제
+	public int delete(Code dto) {
+		
+		return sqlSession.delete(namespace + ".delete",dto);
+	}
+
+	// 수정
+	public int uelete(Code dto) {
+		
+		return sqlSession.update(namespace + ".uelete",dto);
+	}
+
+
+	public int update(Code dto) {
+		
+		return sqlSession.update(namespace + ".update",dto);
+	}
 	
 	
 		

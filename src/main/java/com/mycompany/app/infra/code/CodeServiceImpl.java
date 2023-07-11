@@ -11,30 +11,44 @@ public class CodeServiceImpl implements CodeService{
 	
 	@Autowired
 	CodeDao dao;
-	
-	@Override
-	public List<Code> selectList(CodeVo vo) {
-		return dao.selectList(vo);}
-	
-	@Override
-	public Code selectOne(CodeVo vo) {
-		return dao.selectOne(vo);}
 
 	@Override
-	public int update(Code dto) {
-		return dao.update(dto);
+	public List<Code> selectList(CodeVo vo) {
+		return dao.selectList(vo);
 	}
-	
+
+	public Code selectOne(CodeVo vo) {
+		
+		return dao.selectOne(vo);
+	}
+
+	public int insert(Code dto) {
+		
+		return dao.insert(dto);
+	}
+
 	@Override
 	public int delete(Code dto) {
+		
 		return dao.delete(dto);
 	}
 
 	@Override
-	public int insert(Code dto) {
-		return dao.insert(dto);
+	public int uelete(Code dto) {
+		
+		return dao.uelete(dto);
 	}
 
+	@Override
+	public int update(Code dto) {
+		
+		return dao.update(dto);
+	}
+
+
 	
+	
+	
+
 
 }

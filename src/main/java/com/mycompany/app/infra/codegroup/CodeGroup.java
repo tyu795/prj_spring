@@ -1,4 +1,5 @@
 package com.mycompany.app.infra.codegroup;
+
 public class CodeGroup {
 	//디비칼럼명 첫글자는 소문자
 	//seq는 편의상 디비에는 int지만 자바에서는 string으로 사용한다.

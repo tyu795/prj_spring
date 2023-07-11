@@ -29,16 +29,20 @@ public class IndexController {
 		return "Admin/infra/index/indexXdmView";
 	}
 	
+	// ---------------------------------사용자 페이지---------------------------------------------
 	
-//	@RequestMapping("/codeGroupXdmList")
-//	public String codeGroupXdmList() {
-//		return "Admin/infra/codegroup/codeGroupXdmList";
-//	}
+	//사용자 포폴 메인창
+	@RequestMapping("/usrMain")
+	public String usrMain() {
+		return "User/infra/biography/usrMain";
+	}
 	
-	/*
-	 * @RequestMapping("/codeGroupXdmForm") public String codeGroupXdmForm() {
-	 * return "Admin/infra/codegroup/codeGroupXdmForm"; }
-	 */
+	
+	@RequestMapping("/signUpForm")
+	public String signUpForm() {
+		return "User/infra/member/signUpForm";
+	}
+
 	
 	
 	

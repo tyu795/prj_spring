@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+
+<mapper namespace="com.mycompany.app.infra.member.MemberMapper">
+
+
+<resultMap id="resultMapObj" type="com.mycompany.app.infra.member.Member"></resultMap>
+
+
+	<sql id="abc">
+	
+    	seq
+    	,name
+    	,id
+    	,pw
+    	,email
+    	,delNy
+    	
+    </sql>
+    
+
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT 
+			<include refid="abc"/>
+		FROM 
+			member	
+	</select>
+	
+	
+	<select id="selectOne" resultMap="resultMapObj">
+    SELECT 
+    	<include refid = "abc" />
+    FROM
+    	member
+    WHERE 
+		seq = #{seq}
+	</select>
+	
+	
+	<insert id = "insert">
+
+	INSERT INTO member(
+		name
+		,id
+		,pw
+		,email
+		,delNy
+	)	
+	values(
+		#{name}
+		,#{id}
+		,#{pw}
+		,#{email}
+		,#{delNy}
+	)
+	 <selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+	 </selectKey>
+
+	</insert>
+	
+
+
+	
+</mapper> 

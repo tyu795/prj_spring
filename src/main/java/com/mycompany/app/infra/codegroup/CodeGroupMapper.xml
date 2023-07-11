@@ -20,14 +20,38 @@
     	delNy
     </sql>
     
-    <select id="selectList" resultMap="resultMapObj">
+    <sql id ="selectCommon">
+   		FROM    
+	    	codeGroup
+		WHERE 1=1
+			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')</if>
+    </sql>
+
+   	<select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+	</select>
+
+   	<select id="selectList" resultMap="resultMapObj">
+		SELECT aa.* FROM (   	
+	   		SELECT
+				<include refid="abc" />
+	   			<include refid="selectCommon" />
+		) aa
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   			
+   	</select>
+    
+    
+    
+    
+  <!--   <select id="selectList" resultMap="resultMapObj">
 	    SELECT 
 	    	<include refid = "abc" />
 	    FROM
 			codeGroup  
 		
 	</select>
-
+ -->
 	<select id="selectOne" resultMap="resultMapObj">
     SELECT 
     	<include refid = "abc" />
@@ -71,13 +95,22 @@
 
 	INSERT INTO codeGroup(
 		name
+		,delNy
 	)	
 	values(
 		#{name}
+		,0
 	)
+	 <selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+	 </selectKey>
 
 	</insert>
 	
+	<!--  <selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+	 </selectKey> -->
 	
+		
 	
 </mapper> 

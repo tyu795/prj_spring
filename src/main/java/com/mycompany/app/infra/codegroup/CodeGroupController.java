@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,14 +15,34 @@ public class CodeGroupController {
 	CodeGroupServiceImpl service;
 	
 	@RequestMapping("/codeGroupXdmList")
-	public String codeGroupXdmList(CodeGroupVo vo,Model model) {
+	public String codeGroupXdmList(@ModelAttribute("vo") CodeGroupVo vo,Model model) {
 		
-		List<CodeGroup> list = service.selectList(vo); 
+
+		  vo.setShKeyword(vo.getShKeyword() == null? "" : vo.getShKeyword());
+		  
+		  vo.setParamsPaging(service.selectOneCount(vo));
+			
+			if(vo.getTotalRows() > 0) {
+				List<CodeGroup> list = service.selectList(vo);
+				model.addAttribute("list", list);
+//				model.addAttribute("vo", vo);
+			} else {
+//				by pass
+			}
+			
+			return "Admin/infra/codegroup/codeGroupXdmList";
 		
-		// 왼쪽의 list 는 jsp 에서 사용할 변수명
-		model.addAttribute("list",list);
-		
-		return "Admin/infra/codegroup/codeGroupXdmList";
+		/*
+		 * vo.setShKeyword(vo.getShKeyword() == null? "회원" : vo.getShKeyword());
+		 * 
+		 * 
+		 * List<CodeGroup> list = service.selectList(vo);
+		 * 
+		 * // 왼쪽의 list 는 jsp 에서 사용할 변수명 model.addAttribute("list",list); //
+		 * model.addAttribute("vo",vo);
+		 * 
+		 * return "Admin/infra/codegroup/codeGroupXdmList";
+		 */
 	}
 	
 	
@@ -79,16 +100,15 @@ public class CodeGroupController {
 	
 	
 	@RequestMapping("/codeGroupUele")
-	public String codeGroupUelete(CodeGroup vo) {
+	public String codeGroupUelete(CodeGroup dto) {
 		
 		
-		service.update(vo);
+		service.uelete(dto);
 		
 		return "redirect:/codeGroupXdmList";
 	}
 	
 	
-
 	
 	
 	
