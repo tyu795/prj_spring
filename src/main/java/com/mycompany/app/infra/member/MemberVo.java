@@ -5,8 +5,38 @@ public class MemberVo {
 	private String seq;
 	private Integer shOption;
 	private String shKeyword;
+	private String name;
+	private String id;
+	private String pw;
 	
-//	paging
+	
+public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+
+
+
+	//	paging
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //	private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수

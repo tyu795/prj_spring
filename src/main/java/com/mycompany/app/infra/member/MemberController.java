@@ -1,14 +1,14 @@
 package com.mycompany.app.infra.member;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.mycompany.app.infra.codegroup.CodeGroup;
-import com.mycompany.app.infra.codegroup.CodeGroupVo;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MemberController {
@@ -41,16 +41,27 @@ public class MemberController {
 		
 		return "redirect:/memberList";
 	}
-	
-	
 
 	
-	
-	
-	
-	
-	
-	
-	
+	 @RequestMapping("/loginXdmForm") 
+	 public String loginXdmForm() { 
+		 return "Admin/infra/member/loginXdmForm";
+	 }
+	 
+	 @ResponseBody
+	 @RequestMapping("/loginProc")
+	 public Map<String, Object> loginProc(MemberVo vo) {
+		 Map<String,Object> returnMap = new HashMap<String,Object>();
+		 
+		 Member rtMember = service.selectOneAjax(vo);
+		 
+		 if(rtMember !=null) {
+			 returnMap.put("rtMember",rtMember);
+			 returnMap.put("rt", "success");
+		 } else {
+			 returnMap.put("rt","fail");
+		 }
+		 return returnMap;
+	 }
 
-}
+	}

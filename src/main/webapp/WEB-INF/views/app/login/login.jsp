@@ -1,4 +1,4 @@
-'<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="wrapper">
+      <div class="wrapper"> 
         <div class="title"><span>Login</span></div>
         <form action="#">
           <div class="row">

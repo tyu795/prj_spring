@@ -29,6 +29,10 @@ public class MemberDao {
 		
 		return sqlSession.insert(namespace + ".insert",dto);
 	}
+
+	public Member selectOneAjax(MemberVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOneAjax",vo);
+	}
  
 //	public Member selectOne(MemberVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
 }

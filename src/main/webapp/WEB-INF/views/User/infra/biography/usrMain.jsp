@@ -33,8 +33,8 @@
      	<a href="/signUpForm">
             <p>회원가입</p>
         </a>
-    	<a href="#">
-          <p>즐겨찾기</p>
+    	<a href="/loginXdmForm">
+          <p>로그인</p>
      	</a>
     </header>
     <!-- <nav class="up" class="down">

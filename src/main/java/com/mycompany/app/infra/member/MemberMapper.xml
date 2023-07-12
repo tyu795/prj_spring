@@ -41,6 +41,20 @@
 	</select>
 	
 	
+	
+	<select id="selectOneAjax" resultMap="resultMapObj">
+		SELECT
+			seq,
+			id,
+			pw
+		FROM
+			member
+		WHERE 1=1
+			AND id = #{id}
+			AND pw = #{pw}
+	</select>
+	
+	
 	<insert id = "insert">
 
 	INSERT INTO member(

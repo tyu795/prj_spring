@@ -18,10 +18,10 @@ public class IndexController {
 	}
 	
 	//관리자 로그인창
-	@RequestMapping("/loginXdmForm")
-	public String loginXdmForm() {
-		return "Admin/infra/member/loginXdmForm";
-	}
+//	@RequestMapping("/loginXdmForm")
+//	public String loginXdmForm() {
+//		return "Admin/infra/member/loginXdmForm";
+//	}
 	
 	//관리자 페이지창
 	@RequestMapping("/indexXdmView")

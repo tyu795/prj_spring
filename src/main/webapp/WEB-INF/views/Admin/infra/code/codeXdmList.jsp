@@ -23,13 +23,11 @@
                     </div>
                 </div>
                 <form name="search">
-                    
                     <div class="searchBox">
                         <select name="optCodeGroupName">
                             <option value="">코드그룹</option>
                             <option value="3">결제수단</option>
                             <option value="32">성별</option>
-
                         </select>
                         <select name="optDelNy">
                             <option value="">삭제여부</option>

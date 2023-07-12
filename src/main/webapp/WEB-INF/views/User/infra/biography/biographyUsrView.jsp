@@ -161,14 +161,13 @@
 							culpa magni laudantium dolores.</p>
 					</div>
 				</div>
-
 			</div>
 		</section>
 		<!-- End About Section -->
 
 
 		<!-- ======= Skills Section ======= -->
-		<section id="skills" class="skills section-bg">
+		<!-- <section id="skills" class="skills section-bg">
 			<div class="container">
 
 				<div class="section-title">
@@ -241,7 +240,7 @@
 				</div>
 
 			</div>
-		</section>
+		</section> -->
 		<!-- End Skills Section -->
 
 		<!-- ======= Resume Section ======= -->
@@ -336,7 +335,6 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</section>
 		<!-- End Resume Section -->
@@ -349,7 +347,6 @@
 					<h2>Portfolio</h2>
 					<p>엥</p>
 				</div>
-
 				<div class="row" data-aos="fade-up">
 					<div class="col-lg-12 d-flex justify-content-center">
 						<ul id="portfolio-flters">
@@ -360,21 +357,19 @@
 						</ul>
 					</div>
 				</div>
-
 				<div class="row portfolio-container" data-aos="fade-up"
 					data-aos-delay="100">
-
 					<div class="col-lg-4 col-md-6 portfolio-item filter-app">
 						<div class="portfolio-wrap">
 							<img
-								src="../../resources/templete/assets/img/portfolio/portfolio-1.jpg"
+								src="../../resources/templete/assets/img/portfolio/SomBNB_2.png"
 								class="img-fluid" alt="">
 							<div class="portfolio-links">
 								<a href="/usrMain" title="More Details">User</a> <a
 									href="/loginXdmForm" title="More Details">Admin</a>
 							</div>
-						</div>
 					</div>
+				</div>
 
 				<!-- 	<div class="col-lg-4 col-md-6 portfolio-item filter-web">
 						<div class="portfolio-wrap">
@@ -409,16 +404,11 @@
 
 					<div class="col-lg-4 col-md-6 portfolio-item filter-card">
 						<div class="portfolio-wrap">
-							<img
-								src="../../resources/templete/assets/img/portfolio/portfolio-4.jpg"
+							<img src="../../resources/templete/assets/img/portfolio/portfolio-4.jpg"
 								class="img-fluid" alt="">
 							<div class="portfolio-links">
-								<a
-									href="../../resources/templete/assets/img/portfolio/portfolio-4.jpg"
-									data-gallery="portfolioGallery" class="portfolio-lightbox"
-									title="Card 2"><i class="bx bx-plus"></i></a> <a
-									href="portfolio-details.html" title="More Details"><i
-									class="bx bx-link"></i></a>
+								<a href="/usrMain" title="More Details">User</a> <a
+									href="/loginXdmForm" title="More Details">Admin</a>
 							</div>
 						</div>
 					</div>

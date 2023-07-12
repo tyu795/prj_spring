@@ -26,7 +26,13 @@ public class MemberServiceImpl implements MemberService{
 	public int insert(Member dto) {
 		return dao.insert(dto);
 	}
-	
+
+	@Override
+	public Member selectOneAjax(MemberVo vo) {
+		return dao.selectOneAjax(vo);
+	}
+
+
 	
 	
 	
