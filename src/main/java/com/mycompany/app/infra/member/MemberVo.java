@@ -8,6 +8,7 @@ public class MemberVo {
 	private String name;
 	private String id;
 	private String pw;
+
 	
 	
 public String getName() {
@@ -218,7 +219,8 @@ public String getName() {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
-	
+
+
 	
 	
 	

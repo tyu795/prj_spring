@@ -32,6 +32,12 @@ public class MemberServiceImpl implements MemberService{
 		return dao.selectOneAjax(vo);
 	}
 
+	@Override
+	public int selectOneCheckId(MemberVo vo) {
+		return dao.selectOneCheckId(vo);
+	}
+
+
 
 	
 	

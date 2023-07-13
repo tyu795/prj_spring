@@ -1,5 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ko" >
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +18,14 @@
     <div class="container">
       <div class="wrapper">
         <div class="title"><span>SignUp</span></div>
-        <form action="#">
+        <form action="#" method="post">
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="ID" required>
+            <input id="sign_id" type="text" placeholder="ID" name="sign_id">
           </div>
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="ID Check" required>
+            <input type="text" placeholder="name" required>
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
@@ -35,10 +40,39 @@
             <input type="text" placeholder="Email" required>
           </div>
           <div class="row button">
-            <input type="submit" value="SignUp">
+            <input type="submit" value="SignUp" id="user_id_sign">
           </div>
         </form>
       </div>
     </div>
+    
+    <script src="/resources/js/jquery-3.6.4.min.js"></script>  
+    <script>
+    $("#sign_id").on("blur", function(){
+	    	
+	    	$.ajax({
+	    		async: true 
+	    		,cache: false
+	    		,type: "post"
+	    		/* ,dataType:"json" */
+	    		,url: "/checkIdProc"
+	    		/* ,data : $("#formLogin").serialize() */
+	    		,data : { "id" : $("#sign_id").val()}
+	    		,success: function(response) {
+	    			if(response.rt == "available") {
+	    				alert("사용가능")
+	    			} else {
+	    				alert("중복");
+	    			}
+	    		}
+	    		,error : function(jqXHR, textStatus, errorThrown){
+	    			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+	    		}
+	    	});
+	    });
+ 
+    </script>
+
+    
   </body>
 </html>

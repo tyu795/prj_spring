@@ -8,5 +8,5 @@ public interface MemberService {
 	public Member selectOne(MemberVo vo);
 	public Member selectOneAjax(MemberVo vo);
 	public int insert(Member dto);
-
+	public int selectOneCheckId(MemberVo vo);
 }

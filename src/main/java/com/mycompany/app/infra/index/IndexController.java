@@ -38,6 +38,7 @@ public class IndexController {
 	}
 	
 	
+	// 회원가입창
 	@RequestMapping("/signUpForm")
 	public String signUpForm() {
 		return "User/infra/member/signUpForm";

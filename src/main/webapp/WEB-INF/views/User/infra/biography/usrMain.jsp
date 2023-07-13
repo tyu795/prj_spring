@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -33,9 +37,21 @@
      	<a href="/signUpForm">
             <p>회원가입</p>
         </a>
-    	<a href="/loginXdmForm">
-          <p>로그인</p>
-     	</a>
+        <c:choose>
+     			<c:when test="${not empty sessionId }">
+     				<a href="/usrMain" id="btnLogout">
+		          	<p>로그아웃</p>
+		     		</a>
+              	<!-- <button type="button" class="btn btn-primary" id="btnLogout">LOGOUT</button> -->
+              	</c:when>
+              	<c:otherwise>
+	              	<a href="/loginXdmForm" id="btnLogin">
+		          	<p>로그인</p>
+		     		</a>
+              		<!-- <button type="button" class="btn btn-primary" id="btnLogin">LOGIN</button>
+              		<br> -->
+              	</c:otherwise>
+     	</c:choose>
     </header>
     <!-- <nav class="up" class="down">
         <div class="search">
@@ -114,12 +130,37 @@
             </div>
         </a>
     </div>
+    
+    
+   
     <footer id="footer">
         <p>Copyright ⓒ 2023 SomBNB  All rights reserved.</p>
     </footer>
 
     <script>
+    
         AOS.init();
+        
+        
+        $("#btnLogout").on("click", function(){
+			$.ajax({
+	    		async: true 
+	    		,cache: false
+	    		,type: "post"
+	    		/* ,dataType:"json" */
+	    		,url: "/logoutProc"
+	    		/* ,data : $("#formLogin").serialize() */
+	    		,data : { }
+	    		,success: function(response) {
+	    				location.href = "/usrMain";
+	    		}
+	    		
+	    		,error : function(jqXHR, textStatus, errorThrown){
+	    			alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+	    		}
+	    	});
+		});
+        
     </script>
 </body>
 </html>
