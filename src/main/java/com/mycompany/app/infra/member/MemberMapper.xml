@@ -69,23 +69,25 @@
 	
 	<insert id = "insert">
 
-	INSERT INTO member(
-		name
-		,id
-		,pw
-		,email
-		,delNy
-	)	
-	values(
-		#{name}
-		,#{id}
-		,#{pw}
-		,#{email}
-		,#{delNy}
-	)
-	 <selectKey resultType="String" keyProperty="seq" order="AFTER">
-			SELECT last_insert_id()
-	 </selectKey>
+		INSERT INTO member(
+			name
+			,id
+			,pw
+			,email
+			,delNy
+		)	
+		values(
+			#{name}
+			,#{id}
+			,#{pw}
+			,#{email}
+			,#{delNy}
+		)
+		
+		
+		 <selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+		 </selectKey>
 
 	</insert>
 	
