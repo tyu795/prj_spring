@@ -74,7 +74,7 @@
 	<update id="uelete">
     UPDATE codeGroup
     SET
-    	delNy = 1
+    	delNy = IF(delNy = 1, '0','1')
     WHERE 
 		seq = #{seq}
 	</update>		
@@ -87,6 +87,7 @@
 		codeGroup
 	WHERE 
 		seq = #{seq}
+		
 	</delete>
 	
 	

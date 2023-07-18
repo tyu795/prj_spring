@@ -24,11 +24,11 @@
                 </div>
                 <form name="search">
                     <div class="searchBox">
-                        <select name="optCodeGroupName">
+                       <!--  <select name="optCodeGroupName">
                             <option value="">코드그룹</option>
                             <option value="3">결제수단</option>
                             <option value="32">성별</option>
-                        </select>
+                        </select> -->
                         <select name="optDelNy">
                             <option value="">삭제여부</option>
                             <option value="1">삭제</option>
@@ -45,7 +45,6 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>분류코드</th>
                             <th>코드이름</th>
                             <th></th>
                             <th>삭제여부</th>
@@ -59,7 +58,6 @@
                                     <td></td>
                                     <td><h4 id="nodata">There is no data!</h4></td>
                                     <td></td>
-                                    <td></td>
                                 </tr>
                             </c:when>
                             <c:otherwise>
@@ -67,7 +65,6 @@
                                     <tr>
                                         <td><c:out value="${list.seq}"></c:out></td>
                                         <td><c:out value="${list.name}"></c:out></td>
-                                        <td><c:out value="${list.delNy}"></c:out></td>
                                         <td>
                                             <button class="detailBtn" onclick="location.href='/codeGroupXdmForm?seq=<c:out value = '${list.seq}'/>'">
                                                 수정
@@ -90,9 +87,6 @@
                         </tbody>
                     </table>
                 </div>
-
-              
-
         <%--FORM CONTENT ENDS FROM HERE!!--%>
         <%--FORM CONTENT ENDS FROM HERE!!--%>
             </div>
@@ -101,8 +95,4 @@
 </div>
 
 </body>
-<script type="text/javascript">
-
-
-</script>
 </html>

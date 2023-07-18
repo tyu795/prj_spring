@@ -8,6 +8,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.app.infra.codegroup.CodeGroup;
+
 @Repository
 public class MemberDao {
 
@@ -29,6 +31,13 @@ public class MemberDao {
 		
 		return sqlSession.insert(namespace + ".insert",dto);
 	}
+	
+	
+	// 삭제
+	public int delete(Member dto) {
+		return sqlSession.delete(namespace + ".delete",dto);
+	}
+		
 
 	public Member selectOneAjax(MemberVo vo) {
 		return sqlSession.selectOne(namespace + ".selectOneAjax",vo);

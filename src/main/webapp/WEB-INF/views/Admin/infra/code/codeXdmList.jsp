@@ -24,7 +24,7 @@
                 </div>
                 <form name="search">
                     <div class="searchBox">
-                        <select name="optCodeGroupName">
+                        <select name="optCodeName">
                             <option value="">코드그룹</option>
                             <option value="3">결제수단</option>
                             <option value="32">성별</option>
@@ -90,9 +90,6 @@
                         </tbody>
                     </table>
                 </div>
-
-              
-
         <%--FORM CONTENT ENDS FROM HERE!!--%>
         <%--FORM CONTENT ENDS FROM HERE!!--%>
             </div>
@@ -101,8 +98,4 @@
 </div>
 
 </body>
-<script type="text/javascript">
-
-
-</script>
 </html>

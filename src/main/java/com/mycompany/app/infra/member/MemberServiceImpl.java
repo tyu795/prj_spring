@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.mycompany.app.infra.codegroup.CodeGroup;
+
 @Service
 public class MemberServiceImpl implements MemberService{
 
@@ -36,6 +38,13 @@ public class MemberServiceImpl implements MemberService{
 	public int selectOneCheckId(MemberVo vo) {
 		return dao.selectOneCheckId(vo);
 	}
+
+	@Override
+	public int delete(Member dto) {
+		return dao.delete(dto);
+	}
+
+
 
 
 

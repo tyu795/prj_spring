@@ -19,7 +19,7 @@
                 <div class="mainLabelBox">
                     <h2 class="tableLabel">멤버 관리</h2>
                     <div class="addBox" onclick="location.href='/memberXdmForm'">
-                        <h3 class="tableSubLabel">맴버계정 추가</h3>
+                        <h3 class="tableSubLabel">멤버계정 추가</h3>
                         <span class="material-symbols-outlined">add_box</span></a>
                     </div>
                 </div>

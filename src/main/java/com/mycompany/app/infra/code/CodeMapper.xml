@@ -71,6 +71,7 @@
 		code
 	WHERE 
 		seq = #{seq}
+		
 	</delete>
 	
 	

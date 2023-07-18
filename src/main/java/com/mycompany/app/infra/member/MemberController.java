@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mycompany.app.infra.codegroup.CodeGroup;
+
 @Controller
 public class MemberController {
 
@@ -45,10 +47,20 @@ public class MemberController {
 	}
 
 	
-	 @RequestMapping("/loginXdmForm") 
-	 public String loginXdmForm() { 
-		 return "Admin/infra/member/loginXdmForm";
-	 }
+	@RequestMapping("/memberDele")
+	public String memberDelete(Member dto) {
+		
+		
+		service.delete(dto);
+		
+		return "redirect:/memberXdmList";
+	}
+	
+	
+	@RequestMapping("/loginXdmForm") 
+	public String loginXdmForm() { 
+	    return "Admin/infra/member/loginXdmForm";
+	}
 	 
 	
 	 

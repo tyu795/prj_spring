@@ -93,11 +93,11 @@
                                                 <td><input readonly class="searchInput_formSeq" name="seq" value="<c:out value="${item.seq}"></c:out>"/></td>
                                                 <td>
                                                     <select name="codeGroup_seq">
-                                                        <option value="3" <c:if test="${item.codeGroup_seq == 3}">selected</c:if>>결제수단</option>
-                                                        <option value="32" <c:if test="${item.codeGroup_seq == 32}">selected</c:if>>성별</option>
+                                                       	<option value="3" <c:if test="${item.delNy == 0}">selected</c:if>>결제수단</option>
+                                                        <option value="32" <c:if test="${item.delNy == 1}">selected</c:if>>성별</option>
                                                     </select>
                                                 </td>
-                                                <td><input name="codeName" class="searchInput_form" value="<c:out value="${item.codeName}"></c:out>"></td>
+                                                <td><input name="codeGroupName" class="searchInput_form" value="<c:out value="${item.name}"></c:out>"></td>
                                                 <td>
                                                     <select name="delNy">
                                                         <option value="0" <c:if test="${item.delNy == 0}">selected</c:if>>N</option>

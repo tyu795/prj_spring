@@ -91,6 +91,17 @@
 
 	</insert>
 	
+	
+	<delete id = "delete">
+
+	DELETE
+	FROM 
+		member
+	WHERE 
+		seq = #{seq}
+		
+	</delete>
+	
 
 
 	

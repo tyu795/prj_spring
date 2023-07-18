@@ -48,7 +48,6 @@
                                                     <option value="">:: 코드그룹 ::</option>
                                                     <option value="3" <c:if test="${item.codeGroup_seq == 3}">selected</c:if>>결제수단</option>
                                                     <option value="32" <c:if test="${item.codeGroup_seq == 32}">selected</c:if>>성별</option>
-
                                                 </select>
                                             </td>
                                             <td><input name="codeName" class="searchInput_form" value="<c:out value="${item.codeName}"></c:out>"></td>
