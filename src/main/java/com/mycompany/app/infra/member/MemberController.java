@@ -57,11 +57,23 @@ public class MemberController {
 	}
 	
 	
+	//----------------------관리자 로그인창
+	
 	@RequestMapping("/loginXdmForm") 
 	public String loginXdmForm() { 
 	    return "Admin/infra/member/loginXdmForm";
 	}
 	 
+	
+	//----------------------유저 로그인창
+	
+	
+	@RequestMapping("/loginUserForm") 
+	public String loginUserForm() { 
+	    return "User/infra/member/loginUserForm";
+	}
+	
+	
 	
 	 
 	 @ResponseBody

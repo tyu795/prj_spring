@@ -61,7 +61,6 @@
 	<!-- ======= Header ======= -->
 	<header id="header">
 		<div class="d-flex flex-column">
-
 			<div class="profile">
 				<img src="../../resources/templete/assets/img/profile-img.jpg"
 					alt="" class="img-fluid rounded-circle">
@@ -71,7 +70,6 @@
 				<div class="social-links mt-3 text-center">
 				</div>
 			</div>
-
 			<nav id="navbar" class="nav-menu navbar">
 				<ul>
 					<li><a href="#hero" class="nav-link scrollto active"><i
@@ -110,7 +108,6 @@
 		<!-- ======= About Section ======= -->
 		<section id="about" class="about">
 			<div class="container">
-
 				<div class="section-title">
 					<h2>About</h2>
 					<p>안녕하세요</p>
@@ -342,7 +339,6 @@
 		<!-- ======= Portfolio Section ======= -->
 		<section id="portfolio" class="portfolio section-bg">
 			<div class="container">
-
 				<div class="section-title">
 					<h2>Portfolio</h2>
 					<p>엥</p>
@@ -365,7 +361,7 @@
 								src="../../resources/templete/assets/img/portfolio/SomBNB_2.png"
 								class="img-fluid" alt="">
 							<div class="portfolio-links">
-								<a href="/usrMain" title="More Details">User</a> <a
+								<a href="/loginUserForm" title="More Details">User</a> <a
 									href="/loginXdmForm" title="More Details">Admin</a>
 							</div>
 					</div>

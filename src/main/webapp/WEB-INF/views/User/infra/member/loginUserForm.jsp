@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../resources/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  
   </head>
   <body>
     <div class="container">
@@ -58,7 +59,7 @@
 				,success: function(response) {
 					if(response.rt == "success") {
 						alert(response.rtMember.id);
-						location.href = "/indexXdmView";
+						location.href = "usrMain";
 					} else {
 						alert("회원정보가 일치하지 않습니다.");
 					}

@@ -15,11 +15,11 @@
         <form action="#">
           <div class="row">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="ID" required>
+            <input type="text" placeholder="ID" required value="yhtd">
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Password" required value="jyg">
           </div>
           <!-- <div class="pass">
             <a href="#">Forgot password?</a>

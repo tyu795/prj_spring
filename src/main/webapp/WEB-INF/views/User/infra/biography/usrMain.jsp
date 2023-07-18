@@ -45,7 +45,7 @@
               	<!-- <button type="button" class="btn btn-primary" id="btnLogout">LOGOUT</button> -->
               	</c:when>
               	<c:otherwise>
-	              	<a href="/loginXdmForm" id="btnLogin">
+	              	<a href="/loginUserForm" id="btnLogin">
 		          	<p>로그인</p>
 		     		</a>
               		<!-- <button type="button" class="btn btn-primary" id="btnLogin">LOGIN</button>
