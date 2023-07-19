@@ -8,6 +8,8 @@ public class Member {
 	private String pw;
 	private String email;
 	private String delNy;
+	private String gender;
+	
 //	-----
 	public String getSeq() {
 		return seq;
@@ -45,6 +47,14 @@ public class Member {
 	public void setDelNy(String delNy) {
 		this.delNy = delNy;
 	}
-
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
+	
+	
 	
 }

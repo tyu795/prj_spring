@@ -13,17 +13,22 @@
     <main>
         <div class="mainBox">
             <div class="mainContainer">
-                <%--FORM CONTENT STARTS FROM HERE!!--%>
-                <%--FORM CONTENT STARTS FROM HERE!!--%>
+            <%--FORM CONTENT STARTS FROM HERE!!--%>
+            <%--FORM CONTENT STARTS FROM HERE!!--%>
                 <div class="mainLabelBox">
-                    <h2 class="tableLabel">멤버 관리</h2>
-                    <div class="addBox" onclick="location.href='/memberXdmForm'">
-                        <h3 class="tableSubLabel">멤버계정 추가</h3>
-                        <span class="material-symbols-outlined">add_box</span></a>
+                    <h2 class="tableLabel">공통코드 관리</h2>
+                    <div class="addBox" onclick="location.href='/codeXdmForm'">
+                        <h3 class="tableSubLabel">공통코드 추가</h3>
+                        <span class="material-symbols-outlined">add</span></a>
                     </div>
                 </div>
                 <form name="search">
                     <div class="searchBox">
+                        <select name="optCodeName">
+                            <option value="">코드그룹</option>
+                            <option value="3">결제수단</option>
+                            <option value="32">성별</option>
+                        </select>
                         <select name="optDelNy">
                             <option value="">삭제여부</option>
                             <option value="1">삭제</option>
@@ -40,20 +45,16 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>이름</th>
-                            <th>아이디</th>
-                            <th>패스워드</th>
-                            <th>이메일</th>
+                            <th>분류코드</th>
+                            <th>코드이름</th>
                             <th></th>
                             <th>삭제여부</th>
-                            <th>성별</th>
                         </tr>
                         </thead>
                         <tbody>
                         <c:choose>
                             <c:when test="${fn:length(list) eq 0}">
                                 <tr>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td><h4 id="nodata">There is no data!</h4></td>
@@ -66,11 +67,9 @@
                                     <tr>
                                         <td><c:out value="${list.seq}"></c:out></td>
                                         <td><c:out value="${list.name}"></c:out></td>
-                                        <td><c:out value="${list.id}"></c:out></td>
-                                        <td><c:out value="${list.pw}"></c:out></td>
-                                        <td><c:out value="${list.email}"></c:out></td>
+                                        <td><c:out value="${list.codeName}"></c:out></td>
                                         <td>
-                                            <button class="detailBtn" onclick="location.href='/memberXdmForm?seq=<c:out value = '${list.seq}'/>'">
+                                            <button class="detailBtn" onclick="location.href='/codeXdmForm?seq=<c:out value = '${list.seq}'/>'">
                                                 수정
                                             </button>
                                         </td>
@@ -84,36 +83,19 @@
                                                 </c:otherwise>
                                             </c:choose>
                                         </td>
-                                        <td>
-                                        <c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('32')}"/>
-					                    <c:forEach items="${listCodeGender}" var="listGender" varStatus="statusGender">
-					                    	<c:if test="${list.gender eq listGender.seq}">
-					                    	<c:out value="${listGender.codeName}"/>
-					                    	</c:if>
-					                    </c:forEach>
-                                        </td>
                                     </tr>
                                 </c:forEach>
                             </c:otherwise>
                         </c:choose>
                         </tbody>
                     </table>
-                 
                 </div>
-                <%--FORM CONTENT ENDS FROM HERE!!--%>
-                <%--FORM CONTENT ENDS FROM HERE!!--%>
+        <%--FORM CONTENT ENDS FROM HERE!!--%>
+        <%--FORM CONTENT ENDS FROM HERE!!--%>
             </div>
         </div>
     </main>
 </div>
+
 </body>
-<script type="text/javascript">
-</script>
 </html>
-
-
-
-
-
-
-

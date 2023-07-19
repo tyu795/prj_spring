@@ -1,4 +1,8 @@
 package com.mycompany.app.infra.code;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Code {
 	//디비칼럼명 첫글자는 소문자
 	//seq는 편의상 디비에는 int지만 자바에서는 string으로 사용한다.
@@ -8,6 +12,11 @@ public class Code {
 	private String codeGroup_seq;
 	private String name;
 	private String delNy;
+	
+	
+//	for cache
+	public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
+	
 	
 	//	----- 우클릭 source / generate getter, setter
 	public String getSeq() {
@@ -42,4 +51,7 @@ public class Code {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+	
 }
