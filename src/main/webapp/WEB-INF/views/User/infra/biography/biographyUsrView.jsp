@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 <meta charset="utf-8">
@@ -359,7 +359,7 @@
 						<div class="portfolio-wrap">
 							<img
 								src="../../resources/templete/assets/img/portfolio/SomBNB_2.png"
-								class="img-fluid" alt="">
+								class="img-fluid" alt="솜비앤비 로고">
 							<div class="portfolio-links">
 								<a href="/loginUserForm" title="More Details">User</a> <a
 									href="/loginXdmForm" title="More Details">Admin</a>

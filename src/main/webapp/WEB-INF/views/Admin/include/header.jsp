@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<header>
+<header>			
     <div class="headerBox">
         <div class="logo" onclick="location.href='/indexXdmView'" ><img src="/resources/img/somBNB.png" alt=""></div>
         <div class="nav">
