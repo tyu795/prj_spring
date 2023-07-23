@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+    <mapper namespace="com.mycompany.app.infra.rooms.RoomsMapper">
+    
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.rooms.RoomsMapper"></resultMap>
+    
+     <sql id="abc">
+    	seq
+		,room_id
+		,room_name
+		,room_address
+		,room_price
+		,room_descripcion
+		,check_in_time
+		,check_out_time
+		,return_policy
+		,delNy
+    </sql>
+    
+    <sql id ="selectCommon">
+   		FROM    
+	    	rooms
+		WHERE 1=1
+			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')</if>
+    </sql>
+    
+    
+    <select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+	</select>
+	
+    
+   <!-- <select id="selectList" resultMap="resultMapObj">
+	SELECT aa.* FROM (   	
+   		SELECT
+			<include refid="abc" />
+   			<include refid="selectCommon" />
+	) aa
+	LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   			
+  	</select> -->
+  	
+  	<select id="selectList" resultMap="resultMapObj">
+	    SELECT 
+	    	<include refid = "abc" />
+	    FROM
+			rooms  
+		
+	</select>
+  	
+   	
+   	<select id="selectOne" resultMap="resultMapObj">
+    SELECT 
+    	<include refid = "abc" />
+    FROM
+    	rooms
+    WHERE 
+		seq = #{seq}
+	</select>
+    
+    
+    <insert id = "insert">
+
+	INSERT INTO rooms(
+		seq
+		,room_id
+		,room_name
+		,room_address
+		,room_price
+		,room_descripcion
+		,check_in_time
+		,check_out_time
+		,return_policy
+		,delNy
+	)	
+	values(
+		#{room_name}
+		,0
+	)
+	 <selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+	 </selectKey>
+
+	</insert>
+	
+	
+	<update id="update">
+    UPDATE rooms
+    SET
+    	room_name = #{room_name}
+    WHERE 
+		seq = #{seq}
+	</update>		
+
+
+	<update id="uelete">
+    UPDATE rooms
+    SET
+    	delNy = IF(delNy = 1, '0','1')
+    WHERE 
+		seq = #{seq}
+	</update>		
+	
+	
+	<delete id = "delete">
+
+	DELETE
+	FROM 
+		rooms
+	WHERE 
+		seq = #{seq}
+		
+	</delete>
+	
+	
+		
+</mapper> 
