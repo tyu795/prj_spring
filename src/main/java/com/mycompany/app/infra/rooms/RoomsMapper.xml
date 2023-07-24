@@ -6,15 +6,15 @@
     
     <mapper namespace="com.mycompany.app.infra.rooms.RoomsMapper">
     
-    <resultMap id="resultMapObj" type="com.mycompany.app.infra.rooms.RoomsMapper"></resultMap>
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.rooms.Rooms"></resultMap>
     
-     <sql id="abc">
+     <sql id="abc">  
     	seq
 		,room_id
 		,room_name
 		,room_address
 		,room_price
-		,room_descripcion
+		,room_description
 		,check_in_time
 		,check_out_time
 		,return_policy
@@ -23,7 +23,7 @@
     
     <sql id ="selectCommon">
    		FROM    
-	    	rooms
+	    	Rooms          //sql 테이블 명
 		WHERE 1=1
 			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')</if>
     </sql>
@@ -47,9 +47,7 @@
   	<select id="selectList" resultMap="resultMapObj">
 	    SELECT 
 	    	<include refid = "abc" />
-	    FROM
-			rooms  
-		
+	    	<include refid = "selectCommon" />
 	</select>
   	
    	
@@ -57,7 +55,7 @@
     SELECT 
     	<include refid = "abc" />
     FROM
-    	rooms
+    	Rooms
     WHERE 
 		seq = #{seq}
 	</select>
@@ -65,7 +63,7 @@
     
     <insert id = "insert">
 
-	INSERT INTO rooms(
+	INSERT INTO Rooms(
 		seq
 		,room_id
 		,room_name
@@ -89,7 +87,7 @@
 	
 	
 	<update id="update">
-    UPDATE rooms
+    UPDATE Rooms
     SET
     	room_name = #{room_name}
     WHERE 
@@ -98,7 +96,7 @@
 
 
 	<update id="uelete">
-    UPDATE rooms
+    UPDATE Rooms
     SET
     	delNy = IF(delNy = 1, '0','1')
     WHERE 
@@ -110,7 +108,7 @@
 
 	DELETE
 	FROM 
-		rooms
+		Rooms
 	WHERE 
 		seq = #{seq}
 		

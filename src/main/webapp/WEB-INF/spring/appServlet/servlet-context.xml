@@ -25,6 +25,7 @@
 	
 	
 	<!-- session interceptor s 2023.07.18 for logincheck -->
+ 	
 	<interceptors>
 		<interceptor>
 			<mapping path="/**"/>
@@ -38,6 +39,7 @@
 			<beans:bean id="checkLoginSessionInterception" class="com.mycompany.app.common.interceptor.CheckLoginSessionInterceptor"/>
 		</interceptor>
 	</interceptors>
+
 	<!-- session interceptor e 2023.07.18 for logincheck -->                                                                                      
 	
 </beans:beans>

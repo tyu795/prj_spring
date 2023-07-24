@@ -16,7 +16,7 @@
             <%--FORM CONTENT STARTS FROM HERE!!--%>
             <%--FORM CONTENT STARTS FROM HERE!!--%>
                 <div class="mainLabelBox">
-                    <h2 class="tableLabel">공통코드 관리</h2>
+                    <h2 class="tableLabel">숙박 관리</h2>
                     <div class="addBox" onclick="location.href='/codeXdmForm'">
                         <h3 class="tableSubLabel">공통코드 추가</h3>
                         <span class="material-symbols-outlined">add</span></a>
@@ -45,9 +45,10 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>분류코드</th>
-                            <th>코드이름</th>
-                            <th></th>
+                            <th>숙소이름</th>
+                            <th>체크인 시간</th>
+                            <th>체크아웃 시간</th>
+                            <th>환불 규정</th>
                             <th>삭제여부</th>
                         </tr>
                         </thead>
@@ -60,6 +61,7 @@
                                     <td><h4 id="nodata">There is no data!</h4></td>
                                     <td></td>
                                     <td></td>
+                                    <td></td>
                                 </tr>
                             </c:when>
                             <c:otherwise>
@@ -69,7 +71,7 @@
                                         <td><c:out value="${list.name}"></c:out></td>
                                         <td><c:out value="${list.codeName}"></c:out></td>
                                         <td>
-                                            <button class="detailBtn" onclick="location.href='/codeXdmForm?seq=<c:out value = '${list.seq}'/>'">
+                                            <button class="detailBtn" onclick="location.href='/roomsXdmForm?seq=<c:out value = '${list.seq}'/>'">
                                                 수정
                                             </button>
                                         </td>

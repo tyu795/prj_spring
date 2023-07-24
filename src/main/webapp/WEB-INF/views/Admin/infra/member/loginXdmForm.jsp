@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +20,11 @@
         <form action="">
           <div class="row">
             <i class="fas fa-user"></i>
-            <input name="id" id="idd" type="text" placeholder="ID" required value="yhtd">
+            <input name="id" id="idd" type="text" placeholder="ID" required value="aaa">
           </div>
           <div class="row">
             <i class="fas fa-lock"></i>
-            <input name="pw" id="pww" type="password" placeholder="Password" required value="jyg">
+            <input name="pw" id="pww" type="password" placeholder="Password" required value="1234">
           </div>
           <!-- <div class="pass">
             <a href="#">Forgot password?</a>
@@ -57,7 +57,7 @@
 					}
 				,success: function(response) {
 					if(response.rt == "success") {
-						alert(response.rtMember.id);
+						/* alert(response.rtMember.id); */
 						location.href = "/indexXdmView";
 					} else {
 						alert("회원정보가 일치하지 않습니다.");

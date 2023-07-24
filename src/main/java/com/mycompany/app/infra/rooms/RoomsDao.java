@@ -6,9 +6,10 @@ import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
-  
-  public class RoomsDao {
+ @Repository
+ public class RoomsDao {
   
 	  @Inject
 		@Resource(name = "sqlSession")

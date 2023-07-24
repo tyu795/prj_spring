@@ -172,6 +172,20 @@
         $( function() {
           $( "#datepicker" ).datepicker();
         } );
+        
+        
+        function checkLogin(pageName) {
+            <c:choose>
+                <c:when test="${sessionId == null}">
+                    alert("<c:out value='로그인 후에 이용 가능합니다'/>");
+                    window.location.href="/usrMain"
+                </c:when>
+                <c:otherwise>
+                window.location.href = pageName;
+                    // 버튼을 클릭한 후 실행할 동작
+                </c:otherwise>
+            </c:choose>
+        }
     </script>
 </body>
 </html>
