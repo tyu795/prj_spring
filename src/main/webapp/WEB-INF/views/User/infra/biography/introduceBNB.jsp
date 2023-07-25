@@ -45,13 +45,13 @@
     </header>
     <div id="wrap">
         <h1>석등있는집</h1>
-        <p class="content">
+        <!-- <p class="content">
             <i class="fa-solid fa-star"></i> 4.86
         </p>
         <p class="content">
             <i class="fa-solid fa-user"></i> 슈퍼호스트
-        </p>
-        <p class="content">
+        </p> -->
+        <p class="content_local">
             <i class="fa-solid fa-location-dot"></i> 경주, 경상북도, 한국
         </p>
         <div class="wish">
@@ -83,10 +83,10 @@
                     <img src="../../../../resources/somBNB/img/Gyeongju/host_01.jpg" alt="호스트사진">
                 </div>
                 <div class="textbox">
-                    <h3>
+                    <!-- <h3>
                         <i class="fa-solid fa-user"></i> Sukhee 님은 슈퍼호스트입니다
                     </h3>
-                    <p>슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하며 게스트가 숙소에서 편안히 머무를 수 있도록 최선을 다하는 호스트입니다.</p>
+                    <p>슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하며 게스트가 숙소에서 편안히 머무를 수 있도록 최선을 다하는 호스트입니다.</p> -->
                     <h3>
                         <i class="fa-solid fa-location-dot"></i>
                         훌륭한 숙소 위치
@@ -108,7 +108,7 @@
                 <div class="pay_01">
                     <h2>₩168,000</h2>
                     <p>/박</p>
-                    <i class="fa-solid fa-star"></i> 4.86
+                    <!-- <i class="fa-solid fa-star"></i> 4.86 -->
                     <div class="checkin_out">
                         <input class="datepicker" placeholder="체크인">
                         <input class="datepicker" placeholder="체크아웃">
