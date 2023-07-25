@@ -31,11 +31,24 @@ public class IndexController {
 	
 	// ---------------------------------사용자 페이지---------------------------------------------
 	
-	//사용자 포폴 메인창
+	// 솜비앤비 메인
 	@RequestMapping("/usrMain")
 	public String usrMain() {
 		return "User/infra/biography/usrMain";
 	}
+	
+	// 솜비앤비 숙소 소개
+	@RequestMapping("/introduceBNB")
+	public String introduceBNB() {
+		return "User/infra/biography/introduceBNB";
+	}
+	
+	// 솜비앤비 예약
+	@RequestMapping("/reservationBNB")
+	public String reservationBNB() {
+		return "User/infra/biography/reservationBNB";
+	}
+	
 	
 	
 	// 회원가입창

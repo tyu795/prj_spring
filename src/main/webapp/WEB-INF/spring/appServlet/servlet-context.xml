@@ -33,6 +33,7 @@
 			<exclude-mapping path="/" />
 			<exclude-mapping path="/biographyUsrView" />
 			<exclude-mapping path="/usrMain" />
+			<exclude-mapping path="/introduceBNB" />
 			<exclude-mapping path="/loginXdmForm" />
 			<exclude-mapping path="/loginUserForm" />
 			<exclude-mapping path="/loginProc" />

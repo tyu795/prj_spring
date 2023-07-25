@@ -69,7 +69,7 @@
             <h2>쉼,<br></h2>
             <h2>공간</h2>
         </div>
-        <a href="resources/somBNB/Gyeongju_1.html" class="figure" data-aos="zoom-out" data-aos-duration="700" target="_blank">
+        <a href="/introduceBNB" class="figure" data-aos="zoom-out" data-aos-duration="700" target="_blank">
             <img src="resources/somBNB/img/Gyeongju/Gyeongju1_1.webp" alt="경주1">
             <h2>석등있는집</h2>
             <h3>경상북도, 경주</h3>
