@@ -8,7 +8,7 @@ public class Rooms {
 	 private String room_name; 
 	 private String room_address; 
 	 private String room_price; 
-	 private String room_descripcion; 
+	 private String room_description; 
 	 private String check_in_time; 
 	 private String check_out_time; 
 	 private String return_policy;
@@ -53,11 +53,11 @@ public class Rooms {
 	public void setRoom_price(String room_price) {
 		this.room_price = room_price;
 	}
-	public String getRoom_descripcion() {
-		return room_descripcion;
+	public String getRoom_description() {
+		return room_description;
 	}
-	public void setRoom_descripcion(String room_descripcion) {
-		this.room_descripcion = room_descripcion;
+	public void setRoom_description(String room_description) {
+		this.room_description = room_description;
 	}
 	public String getCheck_in_time() {
 		return check_in_time;

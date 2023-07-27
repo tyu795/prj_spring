@@ -17,18 +17,18 @@
             <%--FORM CONTENT STARTS FROM HERE!!--%>
                 <div class="mainLabelBox">
                     <h2 class="tableLabel">숙박 관리</h2>
-                    <div class="addBox" onclick="location.href='/codeXdmForm'">
-                        <h3 class="tableSubLabel">공통코드 추가</h3>
+                    <div class="addBox" onclick="location.href='/roomsXdmForm'">
+                        <h3 class="tableSubLabel">숙박정보 추가</h3>
                         <span class="material-symbols-outlined">add</span></a>
                     </div>
                 </div>
                 <form name="search">
                     <div class="searchBox">
-                        <select name="optCodeName">
+                        <!-- <select name="optCodeName">
                             <option value="">코드그룹</option>
                             <option value="3">결제수단</option>
                             <option value="32">성별</option>
-                        </select>
+                        </select> -->
                         <select name="optDelNy">
                             <option value="">삭제여부</option>
                             <option value="1">삭제</option>

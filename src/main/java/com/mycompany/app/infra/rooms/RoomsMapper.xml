@@ -23,7 +23,7 @@
     
     <sql id ="selectCommon">
    		FROM    
-	    	Rooms          //sql 테이블 명
+	    	Rooms
 		WHERE 1=1
 			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')</if>
     </sql>
@@ -69,7 +69,7 @@
 		,room_name
 		,room_address
 		,room_price
-		,room_descripcion
+		,room_description
 		,check_in_time
 		,check_out_time
 		,return_policy
