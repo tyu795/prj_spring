@@ -35,7 +35,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>숙소이름</th>
+                                        <th>숙소이름1</th>
                                         <th>체크인</th>
                                         <th>체크아웃</th>
                                         <th>환불규정</th>
@@ -47,7 +47,7 @@
                                     <tr>
                                         <form name="insertForm">
                                             <td></td>
-                                            <td><input name="room_name" class="searchInput_form" value="<c:out value="${item.room_name}"></c:out>"></td>
+                                            <td><input type="text" name="room_name" class="searchInput_form" value="<c:out value="${item.room_name}"></c:out>"></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -100,8 +100,8 @@
                                         <tbody>
                                         <tr>
                                             <form name="updateForm">
-                                                <td><input readonly class="searchInput_formSeq" name="seq" value="<c:out value="${item.seq}"></c:out>"/></td>
-                                                <td><input name="room_name" class="searchInput_form" value="<c:out value="${item.room_name}"></c:out>"></td>
+                                                <td><input type="text" readonly class="searchInput_formSeq" name="seq" value="<c:out value="${item.seq}"></c:out>"/></td>
+                                                <td><input type="text" name="room_name" class="searchInput_form" value="<c:out value="${item.room_name}"></c:out>"></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>

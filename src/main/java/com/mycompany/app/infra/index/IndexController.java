@@ -34,6 +34,13 @@ public class IndexController {
 	// 솜비앤비 메인
 	@RequestMapping("/usrMain")
 	public String usrMain() {
+		
+		// rooms 테이블에 있는 정보를 가져온다
+		
+		// 가져온 정보를 jsp로 전달해야 된다.
+		
+		
+		
 		return "User/infra/biography/usrMain";
 	}
 	

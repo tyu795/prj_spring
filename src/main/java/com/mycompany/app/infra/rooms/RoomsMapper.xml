@@ -10,7 +10,6 @@
     
      <sql id="abc">  
     	seq
-		,room_id
 		,room_name
 		,room_address
 		,room_price
@@ -65,7 +64,6 @@
 
 	INSERT INTO Rooms(
 		seq
-		,room_id
 		,room_name
 		,room_address
 		,room_price
