@@ -69,16 +69,28 @@
             <h2>쉼,<br></h2>
             <h2>공간</h2>
         </div>
+        
+              
+            <c:forEach items="${list}" var="list" varStatus="status">
         <a href="/introduceBNB" class="figure" data-aos="zoom-out" data-aos-duration="700" target="_blank">
             <img src="resources/somBNB/img/Gyeongju/Gyeongju1_1.webp" alt="경주1">
-            <h2>석등있는집</h2>
+            	
+            		<h2><c:out value="${list.room_name}"></c:out></h2>
+                    <h3><c:out value="${list.room_address}"></c:out></h3>
+                    <p><c:out value="${list.room_price}"></c:out>원</p>
+           
+           <!--  <h2>석등있는집</h2>
             <h3>경상북도, 경주</h3>
-            <p>168,000원/ 박</p>
-            <div class="fa">
+            <p>168,000원/ 박</p> -->
+            
+          <!--   <div class="fa">
                 <i class="fa-solid fa-star"></i>
                 <p>4.86</p>
-            </div>
+            </div> -->
         </a>
+            </c:forEach>        
+        
+<!--         
         <a href="resources/somBNB/Gyeongju_2.html" class="figure" data-aos="zoom-out" data-aos-duration="700" target="_blank">
             <img src="resources/somBNB/img/Gyeongju/Gyeongju2_1.webp" alt="경주2">
             <h2>한옥스테이 여여-</h2>
@@ -129,6 +141,7 @@
                 <p>4.89</p>
             </div>
         </a>
+ -->        
     </div>
     
     

@@ -1,10 +1,23 @@
 package com.mycompany.app.infra.index;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mycompany.app.infra.rooms.Rooms;
+import com.mycompany.app.infra.rooms.RoomsServiceImpl;
+import com.mycompany.app.infra.rooms.RoomsVo;
 
 @Controller
 public class IndexController {
+	
+	
+	@Autowired
+	RoomsServiceImpl serviceRooms;
+
 	
 	@RequestMapping("/biographyUsrView")
 	public String biographyUsrView() {
@@ -33,13 +46,15 @@ public class IndexController {
 	
 	// 솜비앤비 메인
 	@RequestMapping("/usrMain")
-	public String usrMain() {
+	public String usrMain(RoomsVo vo,Model model) {
 		
 		// rooms 테이블에 있는 정보를 가져온다
+		List<Rooms> list = serviceRooms.selectList(vo);
+		
+		model.addAttribute("list",list);
+		
 		
 		// 가져온 정보를 jsp로 전달해야 된다.
-		
-		
 		
 		return "User/infra/biography/usrMain";
 	}
