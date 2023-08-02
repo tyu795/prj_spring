@@ -10,7 +10,5 @@ public interface CodeService {
 	public int delete(Code dto);
 	public int uelete(Code dto);
 	public int update(Code dto);
-		
-	
 
 }

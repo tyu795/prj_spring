@@ -43,8 +43,9 @@
             <p>즐겨찾기</p>
         </a> -->
     </header>
-    <div id="wrap">
-        <h1>석등있는집</h1>
+	    <div id="wrap">
+	        <h1>석등있는 집</h1>
+     
         <!-- <p class="content">
             <i class="fa-solid fa-star"></i> 4.86
         </p>

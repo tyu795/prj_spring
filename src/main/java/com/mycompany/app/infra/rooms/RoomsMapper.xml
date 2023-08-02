@@ -8,7 +8,7 @@
     
     <resultMap id="resultMapObj" type="com.mycompany.app.infra.rooms.Rooms"></resultMap>
     
-     <sql id="abc">  
+    <sql id="abc">  
     	seq
 		,room_name
 		,room_address

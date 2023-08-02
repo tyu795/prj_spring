@@ -5,7 +5,7 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <%@include file="../../include/head.jsp"%>
 <body>
 <div>
