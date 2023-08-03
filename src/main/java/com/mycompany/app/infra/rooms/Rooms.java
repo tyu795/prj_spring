@@ -1,7 +1,10 @@
 
 package com.mycompany.app.infra.rooms;
- 
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class Rooms {
+	
  
 	 private String seq; 
 	 private String room_name; 
@@ -14,8 +17,46 @@ public class Rooms {
 	 private String delNy;
 	 
 	 
+	 // 업로드용 dto
+	 private MultipartFile[] uploadImg;
+	 private Integer uploadImgType;	
+	 private Integer uploadImgMaxNumber;
+	 private String[] uploadImgDeleteSeq;
+	 private String[] uploadImgDeletePathFile;	
 	 
 	 
+	 
+	 
+	public MultipartFile[] getUploadImg() {
+		return uploadImg;
+	}
+	public void setUploadImg(MultipartFile[] uploadImg) {
+		this.uploadImg = uploadImg;
+	}
+	public Integer getUploadImgType() {
+		return uploadImgType;
+	}
+	public void setUploadImgType(Integer uploadImgType) {
+		this.uploadImgType = uploadImgType;
+	}
+	public Integer getUploadImgMaxNumber() {
+		return uploadImgMaxNumber;
+	}
+	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
+		this.uploadImgMaxNumber = uploadImgMaxNumber;
+	}
+	public String[] getUploadImgDeleteSeq() {
+		return uploadImgDeleteSeq;
+	}
+	public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
+		this.uploadImgDeleteSeq = uploadImgDeleteSeq;
+	}
+	public String[] getUploadImgDeletePathFile() {
+		return uploadImgDeletePathFile;
+	}
+	public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
+		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
+	}
 	public String getDelNy() {
 		return delNy;
 	}

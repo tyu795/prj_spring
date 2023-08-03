@@ -44,7 +44,7 @@
         </a> -->
     </header>
 	    <div id="wrap">
-	        <h1>석등있는 집</h1>
+	        <h1><c:out value="${item.room_name }"/></h1>
      
         <!-- <p class="content">
             <i class="fa-solid fa-star"></i> 4.86
@@ -53,7 +53,7 @@
             <i class="fa-solid fa-user"></i> 슈퍼호스트
         </p> -->
         <p class="content_local">
-            <i class="fa-solid fa-location-dot"></i> 경주, 경상북도, 한국
+            <i class="fa-solid fa-location-dot"></i> <c:out value="${item.room_address }"/>
         </p>
         <div class="wish">
             <i class="fa-regular fa-heart"></i>

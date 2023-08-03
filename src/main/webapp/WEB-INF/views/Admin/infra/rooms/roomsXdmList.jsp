@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <%@include file="../../include/head.jsp"%>
@@ -67,13 +68,10 @@
                                 <c:forEach items="${list}" var="list" varStatus="status">
                                     <tr>
                                         <td><c:out value="${list.seq}"></c:out></td>
-                                        <td><c:out value="${list.name}"></c:out></td>
-                                        <td><c:out value="${list.codeName}"></c:out></td>
-                                        <td>
-                                            <button class="detailBtn" onclick="location.href='/roomsXdmForm?seq=<c:out value = '${list.seq}'/>'">
-                                                수정
-                                            </button>
-                                        </td>
+                                        <td><c:out value="${list.room_name}"></c:out></td>
+                                        <td><c:out value="${list.check_in_time}"></c:out></td>
+                                        <td><c:out value="${list.check_out_time}"></c:out></td>
+                                        <td><c:out value="${list.return_policy}"></c:out></td>
                                         <td>
                                             <c:choose>
                                                 <c:when test="${list.delNy eq '1'}">
