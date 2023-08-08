@@ -50,6 +50,7 @@
                             <th>체크아웃 시간</th>
                             <th>환불 규정</th>
                             <th>삭제여부</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -82,6 +83,7 @@
                                                 </c:otherwise>
                                             </c:choose>
                                         </td>
+                                        <td><c:out value="${list.return_policy}"></c:out></td>
                                     </tr>
                                 </c:forEach>
                             </c:otherwise>

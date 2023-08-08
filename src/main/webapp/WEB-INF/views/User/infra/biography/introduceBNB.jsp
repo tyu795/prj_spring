@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -44,7 +45,7 @@
         </a> -->
     </header>
 	    <div id="wrap">
-	        <h1><c:out value="${item.room_name }"/></h1>
+	        <h1><c:out value="${item.room_name}"/></h1>
      
         <!-- <p class="content">
             <i class="fa-solid fa-star"></i> 4.86
@@ -53,7 +54,7 @@
             <i class="fa-solid fa-user"></i> 슈퍼호스트
         </p> -->
         <p class="content_local">
-            <i class="fa-solid fa-location-dot"></i> <c:out value="${item.room_address }"/>
+            <i class="fa-solid fa-location-dot"></i> <c:out value="${item.room_address}"/>
         </p>
         <div class="wish">
             <i class="fa-regular fa-heart"></i>
@@ -80,9 +81,9 @@
                 <p class="content">최대인원 4명 </p>
                 <p class="content">침실 1개</p>
                 <p>욕실 1개</p>
-                <div class="host">
+                <!-- <div class="host">
                     <img src="../../../../resources/somBNB/img/Gyeongju/host_01.jpg" alt="호스트사진">
-                </div>
+                </div> -->
                 <div class="textbox">
                     <!-- <h3>
                         <i class="fa-solid fa-user"></i> Sukhee 님은 슈퍼호스트입니다
@@ -95,7 +96,7 @@
                     <p>최근 숙박한 게스트 중 90%가 위치에 별점 5점을 준 숙소입니다.</p>
                     <h3>
                         <i class="fa-regular fa-calendar-check"></i>
-                        예약일 10일 전까지 무료로 취소하실 수 있습니다.
+                        예약일  <c:out value="${item.return_policy}"/>일 전까지 무료로 취소하실 수 있습니다.
                     </h3>
                 </div>
                 <div class="textbox">
@@ -103,11 +104,12 @@
                         최대 4인까지 이용가능한 숙소이며 숙소 안에 화장실이 포함되어 있습니다.
                         (단 화장실이 오래된 고택의 특성상 좀 낮습니다. 바닥부터 천장까지 대략 190cm, 키가 크신분들은 좀 불편하실수 있습니다.)<br><br>숙소 이용 중 숙소 물품 또는 숙소 파손에 대한 책임은 투숙객에게 있으므로<br>주의하시기 바랍니다.<br>
                     </p>
+                   
                 </div>
             </div>
             <div class="pay_box">
                 <div class="pay_01">
-                    <h2>₩168,000</h2>
+                    <h2>₩ <c:out value="${item.room_price}"/></h2>
                     <p>/박</p>
                     <!-- <i class="fa-solid fa-star"></i> 4.86 -->
                     <div class="checkin_out">
@@ -141,7 +143,9 @@
             </div>
             <div class="service">
                 <h2>숙소 편의시설</h2>
-                <i class="fa-solid fa-wifi"></i>무선 인터넷<br>
+					<c:if test="${item.wifi eq '1' }">
+						<i class="fa-solid fa-wifi"></i>무선 인터넷<br>
+					</c:if>
                 <i class="fa-solid fa-car-rear"></i>건물 내 무료주차<br>
                 <i class="fa-regular fa-snowflake"></i>에어컨<br>
                 <i class="fa-solid fa-wind"></i>헤어 드라이어<br>
@@ -153,8 +157,8 @@
             <h2>알아두어야 할 사항</h2>
             <div class="notice_s">
                 <h3>숙소 이용규칙</h3>
-                <p>체크인 시간: 오후 3:00~오후 8:00<br>
-                체크아웃 시간: 오전 11:00 전까지<br>
+                <p>체크인 시간: <c:out value="${item.check_in_time}"/> 전까지<br>
+                체크아웃 시간: <c:out value="${item.check_out_time}"/> 전까지<br>
                 게스트 정원 4명</p>
             </div>
             <div class="notice_s">
@@ -165,7 +169,7 @@
             </div>
             <div class="notice_s">
                 <h3>환불 정책</h3>
-                <p>예약일 10일 전까지 무료로 취소하실 수 있습니다.</p>
+                <p>예약일 <c:out value="${item.return_policy}"/>일 전까지 무료로 취소하실 수 있습니다.</p>
             </div>
         </div>
         <div class="map">

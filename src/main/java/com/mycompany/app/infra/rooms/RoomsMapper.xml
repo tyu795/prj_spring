@@ -18,7 +18,20 @@
 		,check_out_time
 		,return_policy
 		,delNy
+		,wifi
+		,parkingFree
+		,aircon
+		,hairdry
+		,bathtub
+		,cctv
+		,tv
+		,kitchen
+		,oven
+		,oceanView
+		,officeSpace
+		,pet
     </sql>
+    
     
     <sql id ="selectCommon">
    		FROM    
