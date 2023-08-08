@@ -27,6 +27,11 @@ public class Rooms {
 	 private String oceanView;
 	 private String officeSpace;
 	 private String pet;
+	 private String maximumPeople;
+	 private String bedroom;
+	 private String bed;
+	 private String bathroom;
+	 private String host_seq;
 	 
 	 
 	 
@@ -197,7 +202,38 @@ public class Rooms {
 	public void setPet(String pet) {
 		this.pet = pet;
 	}
+	public String getMaximumPeople() {
+		return maximumPeople;
+	}
+	public void setMaximumPeople(String maximumPeople) {
+		this.maximumPeople = maximumPeople;
+	}
+	public String getBedroom() {
+		return bedroom;
+	}
+	public void setBedroom(String bedroom) {
+		this.bedroom = bedroom;
+	}
+	public String getBed() {
+		return bed;
+	}
+	public void setBed(String bed) {
+		this.bed = bed;
+	}
+	public String getBathroom() {
+		return bathroom;
+	}
+	public void setBathroom(String bathroom) {
+		this.bathroom = bathroom;
+	}
+	public String getHost_seq() {
+		return host_seq;
+	}
+	public void setHost_seq(String host_seq) {
+		this.host_seq = host_seq;
+	}
 	 
+	
 	
 	 
 	 

@@ -30,6 +30,11 @@
 		,oceanView
 		,officeSpace
 		,pet
+		,maximumPeople
+		,bedroom
+		,bed
+		,bathroom
+		,host_seq
     </sql>
     
     

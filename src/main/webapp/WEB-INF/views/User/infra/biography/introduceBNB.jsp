@@ -78,9 +78,9 @@
         <div id="md_box">
             <div class="content_wrap">
                 <h2>Sukhee 님이 호스트하는 저택 전체</h2>
-                <p class="content">최대인원 4명 </p>
-                <p class="content">침실 1개</p>
-                <p>욕실 1개</p>
+                <p class="content">최대인원 <c:out value="${item.maximumPeople}"/>명 </p>
+                <p class="content">침실 <c:out value="${item.bedroom}"/>개</p>
+                <p>욕실 <c:out value="${item.bathroom}"/>개</p>
                 <!-- <div class="host">
                     <img src="../../../../resources/somBNB/img/Gyeongju/host_01.jpg" alt="호스트사진">
                 </div> -->
@@ -100,11 +100,11 @@
                     </h3>
                 </div>
                 <div class="textbox">
-                    <p>석등있는집 아랫채는 경주 최부자댁 고택으로 오래된 한국 전통 한옥의 미가 잘 보존된 숙소 입니다.<br><br>큰 대문으로 들어와 이쁜 정원을 지나 두번째 중문을 통과하면 안채로 연결됩니다.<br>중문을 지나면 바로 왼쪽에 위치한 숙소입니다.<br><br>
+                    <!-- <p>석등있는집 아랫채는 경주 최부자댁 고택으로 오래된 한국 전통 한옥의 미가 잘 보존된 숙소 입니다.<br><br>큰 대문으로 들어와 이쁜 정원을 지나 두번째 중문을 통과하면 안채로 연결됩니다.<br>중문을 지나면 바로 왼쪽에 위치한 숙소입니다.<br><br>
                         최대 4인까지 이용가능한 숙소이며 숙소 안에 화장실이 포함되어 있습니다.
                         (단 화장실이 오래된 고택의 특성상 좀 낮습니다. 바닥부터 천장까지 대략 190cm, 키가 크신분들은 좀 불편하실수 있습니다.)<br><br>숙소 이용 중 숙소 물품 또는 숙소 파손에 대한 책임은 투숙객에게 있으므로<br>주의하시기 바랍니다.<br>
-                    </p>
-                   
+                    </p> -->
+                    <c:out value="${item.room_description}"/>
                 </div>
             </div>
             <div class="pay_box">
@@ -132,7 +132,7 @@
                         <p>예약 확정 전에는 요금이 청구되지 않습니다.</p>
                     </div>
                     <div class="total_pay">
-                        <p>₩ 168,000 x 4박</p>
+                        <p>₩ <c:out value="${item.room_price}"/> x 4박</p>
                         <p>₩ 672,000</p>
                     </div>
                     <div class="total_pay_01">
@@ -159,7 +159,7 @@
                 <h3>숙소 이용규칙</h3>
                 <p>체크인 시간: <c:out value="${item.check_in_time}"/> 전까지<br>
                 체크아웃 시간: <c:out value="${item.check_out_time}"/> 전까지<br>
-                게스트 정원 4명</p>
+                게스트 정원 <c:out value="${item.maximumPeople}"/>명</p>
             </div>
             <div class="notice_s">
                 <h3>안전 및 숙소</h3>
