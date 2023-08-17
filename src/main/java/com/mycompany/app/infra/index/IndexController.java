@@ -52,6 +52,16 @@ public class IndexController {
 		return "Admin/infra/index/indexXdmView";
 	}
 	
+	
+	//숙박업체 관리자 페이지창
+	@RequestMapping("/houseXdmList") 
+	public String houseXdmList() {
+		return "Admin/house/houseXdmList";
+	}
+	
+	
+	
+	
 	// ---------------------------------사용자 페이지---------------------------------------------
 	
 	// 솜비앤비 메인

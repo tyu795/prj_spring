@@ -32,6 +32,8 @@ public class Rooms {
 	 private String bed;
 	 private String bathroom;
 	 private String host_seq;
+	 private String latitude;
+	 private String longitude;
 	 
 	 
 	 
@@ -232,7 +234,20 @@ public class Rooms {
 	public void setHost_seq(String host_seq) {
 		this.host_seq = host_seq;
 	}
-	 
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+	
+	
 	
 	
 	 

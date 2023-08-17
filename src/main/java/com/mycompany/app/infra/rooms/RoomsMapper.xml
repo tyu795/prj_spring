@@ -35,6 +35,8 @@
 		,bed
 		,bathroom
 		,host_seq
+		,latitude
+		,longitude
     </sql>
     
     

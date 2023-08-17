@@ -30,7 +30,7 @@
                         </li>
                     </a>
                     <ul class="subNavList">
-                        <a href="#"><li>
+                        <a href="houseXdmList"><li>
                             숙박업체
                         </li></a>
                         <a href="#"><li>

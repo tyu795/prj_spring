@@ -10,7 +10,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>경주 석등있는집</title>
+    <title>
+    	<c:out value="${item.room_name}"/>
+    </title>
     <link rel="stylesheet" href="../../../../resources/somBNB/css/Gyeongju_1.css">
     <!-- 폰트 어썸 -->
     <script src="https://kit.fontawesome.com/f0e73cfa04.js" crossorigin="anonymous"></script>
@@ -117,10 +119,17 @@
                         <input class="datepicker" placeholder="체크아웃">
                     <select class="form-select" aria-label="Default select example">
                         <option selected>인원</option>
-                        <option value="1">1명</option>
+                        
+                        <c:forEach var="asdf" items="" varStatus="varStatus" end="2">
+                        	<option selected>인원<c:out value="${varStatus.index }"/> </option>
+                        </c:forEach>
+                  
+                        
+                        
+<!--                         <option value="1">1명</option>
                         <option value="2">2명</option>
                         <option value="3">3명</option>
-                        <option value="4">4명</option>
+                        <option value="4">4명</option> -->
                     </select>    
                     </div>
                     <div class="reservation" onclick="redirectToReservationPage()">
@@ -146,11 +155,21 @@
 					<c:if test="${item.wifi eq '1' }">
 						<i class="fa-solid fa-wifi"></i>무선 인터넷<br>
 					</c:if>
-                <i class="fa-solid fa-car-rear"></i>건물 내 무료주차<br>
-                <i class="fa-regular fa-snowflake"></i>에어컨<br>
-                <i class="fa-solid fa-wind"></i>헤어 드라이어<br>
-                <i class="fa-solid fa-bath"></i>온수 욕조<br>
-                <i class="fa-solid fa-video"></i>숙소 내 보안 카메라
+					<c:if test="${item.parkingFree eq '1' }">
+						<i class="fa-solid fa-car-rear"></i>건물 내 무료주차<br>
+					</c:if>
+					<c:if test="${item.aircon eq '1' }">
+		                <i class="fa-regular fa-snowflake"></i>에어컨<br>
+		            </c:if>
+		            <c:if test="${item.hairdry eq '1' }">
+		                <i class="fa-solid fa-wind"></i>헤어 드라이어<br>
+		            </c:if>    
+		            <c:if test="${item.bathtub eq '1' }">
+		                <i class="fa-solid fa-bath"></i>온수 욕조<br>
+		            </c:if> 
+		            <c:if test="${item.cctv eq '1' }">   
+		                <i class="fa-solid fa-video"></i>숙소 내 보안 카메라
+		            </c:if> 
             </div>
         </div>
         <div id="notice">
@@ -221,6 +240,8 @@
                 </c:otherwise>
             </c:choose>
         }
+        
+     
  
     </script>
     
