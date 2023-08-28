@@ -97,14 +97,14 @@
                 <div class="text">
                     <p>저택 전체</p>
                     <p>석등있는집2 아랫채(150년 최부자 고택)</p>
-                    <ul>
+                   <!--  <ul>
                         <li>
                             <i class="fa-solid fa-star"></i> 4.86
                         </li>
                         <li>
                             <i class="fa-solid fa-user"></i> 슈퍼호스트
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
             <div class="wr_02">

@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,7 +58,7 @@ public class IndexController {
 	//숙박업체 관리자 페이지창
 	@RequestMapping("/houseXdmList") 
 	public String houseXdmList() {
-		return "Admin/house/houseXdmList";
+		return "Admin/infra/house/houseXdmList";
 	}
 	
 	
@@ -93,7 +95,7 @@ public class IndexController {
 	
 	// 솜비앤비 예약
 	@RequestMapping("/reservationBNB")
-	public String reservationBNB() {
+	public String reservationBNB(HttpSession httpSession) {
 		return "User/infra/biography/reservationBNB";
 	}
 	

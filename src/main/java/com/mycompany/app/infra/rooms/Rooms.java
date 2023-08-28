@@ -27,7 +27,7 @@ public class Rooms {
 	 private String oceanView;
 	 private String officeSpace;
 	 private String pet;
-	 private String maximumPeople;
+	 private Integer maximumPeople;
 	 private String bedroom;
 	 private String bed;
 	 private String bathroom;
@@ -42,54 +42,14 @@ public class Rooms {
 	 private Integer uploadImgType;	
 	 private Integer uploadImgMaxNumber;
 	 private String[] uploadImgDeleteSeq;
-	 private String[] uploadImgDeletePathFile;	
-	 
-	 
-	 
-	 
-	public MultipartFile[] getUploadImg() {
-		return uploadImg;
-	}
-	public void setUploadImg(MultipartFile[] uploadImg) {
-		this.uploadImg = uploadImg;
-	}
-	public Integer getUploadImgType() {
-		return uploadImgType;
-	}
-	public void setUploadImgType(Integer uploadImgType) {
-		this.uploadImgType = uploadImgType;
-	}
-	public Integer getUploadImgMaxNumber() {
-		return uploadImgMaxNumber;
-	}
-	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
-		this.uploadImgMaxNumber = uploadImgMaxNumber;
-	}
-	public String[] getUploadImgDeleteSeq() {
-		return uploadImgDeleteSeq;
-	}
-	public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
-		this.uploadImgDeleteSeq = uploadImgDeleteSeq;
-	}
-	public String[] getUploadImgDeletePathFile() {
-		return uploadImgDeletePathFile;
-	}
-	public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
-		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
-	}
-	public String getDelNy() {
-		return delNy;
-	}
-	public void setDelNy(String delNy) {
-		this.delNy = delNy;
-	}
+	 private String[] uploadImgDeletePathFile;
+//	 -----
 	public String getSeq() {
 		return seq;
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
-
 	public String getRoom_name() {
 		return room_name;
 	}
@@ -131,6 +91,12 @@ public class Rooms {
 	}
 	public void setReturn_policy(String return_policy) {
 		this.return_policy = return_policy;
+	}
+	public String getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(String delNy) {
+		this.delNy = delNy;
 	}
 	public String getWifi() {
 		return wifi;
@@ -204,10 +170,10 @@ public class Rooms {
 	public void setPet(String pet) {
 		this.pet = pet;
 	}
-	public String getMaximumPeople() {
+	public Integer getMaximumPeople() {
 		return maximumPeople;
 	}
-	public void setMaximumPeople(String maximumPeople) {
+	public void setMaximumPeople(Integer maximumPeople) {
 		this.maximumPeople = maximumPeople;
 	}
 	public String getBedroom() {
@@ -246,11 +212,36 @@ public class Rooms {
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
-	
-	
-	
-	
-	 
+	public MultipartFile[] getUploadImg() {
+		return uploadImg;
+	}
+	public void setUploadImg(MultipartFile[] uploadImg) {
+		this.uploadImg = uploadImg;
+	}
+	public Integer getUploadImgType() {
+		return uploadImgType;
+	}
+	public void setUploadImgType(Integer uploadImgType) {
+		this.uploadImgType = uploadImgType;
+	}
+	public Integer getUploadImgMaxNumber() {
+		return uploadImgMaxNumber;
+	}
+	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
+		this.uploadImgMaxNumber = uploadImgMaxNumber;
+	}
+	public String[] getUploadImgDeleteSeq() {
+		return uploadImgDeleteSeq;
+	}
+	public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
+		this.uploadImgDeleteSeq = uploadImgDeleteSeq;
+	}
+	public String[] getUploadImgDeletePathFile() {
+		return uploadImgDeletePathFile;
+	}
+	public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
+		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
+	}	
 	 
 	 
  }

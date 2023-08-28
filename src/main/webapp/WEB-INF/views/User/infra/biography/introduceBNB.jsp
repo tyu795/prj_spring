@@ -49,10 +49,10 @@
 	    <div id="wrap">
 	        <h1><c:out value="${item.room_name}"/></h1>
      
-        <!-- <p class="content">
+        <!--  <p class="content">
             <i class="fa-solid fa-star"></i> 4.86
-        </p>
-        <p class="content">
+        </p> -->
+       <!--  <p class="content">
             <i class="fa-solid fa-user"></i> 슈퍼호스트
         </p> -->
         <p class="content_local">
@@ -87,7 +87,7 @@
                     <img src="../../../../resources/somBNB/img/Gyeongju/host_01.jpg" alt="호스트사진">
                 </div> -->
                 <div class="textbox">
-                    <!-- <h3>
+                  <!--   <h3>
                         <i class="fa-solid fa-user"></i> Sukhee 님은 슈퍼호스트입니다
                     </h3>
                     <p>슈퍼호스트는 풍부한 경험과 높은 평점을 자랑하며 게스트가 숙소에서 편안히 머무를 수 있도록 최선을 다하는 호스트입니다.</p> -->
@@ -102,11 +102,7 @@
                     </h3>
                 </div>
                 <div class="textbox">
-                    <!-- <p>석등있는집 아랫채는 경주 최부자댁 고택으로 오래된 한국 전통 한옥의 미가 잘 보존된 숙소 입니다.<br><br>큰 대문으로 들어와 이쁜 정원을 지나 두번째 중문을 통과하면 안채로 연결됩니다.<br>중문을 지나면 바로 왼쪽에 위치한 숙소입니다.<br><br>
-                        최대 4인까지 이용가능한 숙소이며 숙소 안에 화장실이 포함되어 있습니다.
-                        (단 화장실이 오래된 고택의 특성상 좀 낮습니다. 바닥부터 천장까지 대략 190cm, 키가 크신분들은 좀 불편하실수 있습니다.)<br><br>숙소 이용 중 숙소 물품 또는 숙소 파손에 대한 책임은 투숙객에게 있으므로<br>주의하시기 바랍니다.<br>
-                    </p> -->
-                    <c:out value="${item.room_description}"/>
+                    <p><c:out value="${item.room_description}"/></p>
                 </div>
             </div>
             <div class="pay_box">
@@ -115,21 +111,13 @@
                     <p>/박</p>
                     <!-- <i class="fa-solid fa-star"></i> 4.86 -->
                     <div class="checkin_out">
-                        <input class="datepicker" placeholder="체크인">
-                        <input class="datepicker" placeholder="체크아웃">
+                        <input class="datepicker" placeholder="체크인" id="startDate">
+                        <input class="datepicker" placeholder="체크아웃" id="endDate">
                     <select class="form-select" aria-label="Default select example">
                         <option selected>인원</option>
-                        
-                        <c:forEach var="asdf" items="" varStatus="varStatus" end="2">
-                        	<option selected>인원<c:out value="${varStatus.index }"/> </option>
-                        </c:forEach>
-                  
-                        
-                        
-<!--                         <option value="1">1명</option>
-                        <option value="2">2명</option>
-                        <option value="3">3명</option>
-                        <option value="4">4명</option> -->
+                        <c:forEach var="i" begin="1" end="${item.maximumPeople }" step="1">
+							<option value="<c:out value="${i }"/>"><c:out value="${i }"/>명</option>
+						</c:forEach>
                     </select>    
                     </div>
                     <div class="reservation" onclick="redirectToReservationPage()">
@@ -141,12 +129,12 @@
                         <p>예약 확정 전에는 요금이 청구되지 않습니다.</p>
                     </div>
                     <div class="total_pay">
-                        <p>₩ <c:out value="${item.room_price}"/> x 4박</p>
-                        <p>₩ 672,000</p>
+                        <p>₩ <c:out value="${item.room_price}"/> x <span id = "count"></span>박</p>
+                        <p>₩ <span id="totalPrice1"></span></p>
                     </div>
                     <div class="total_pay_01">
                         <p>총 합계</p>
-                        <p>₩ 672,000</p>
+                        <p>₩ <span id = "totalPrice2" ></span></p>
                     </div>
                 </div>
             </div>
@@ -240,6 +228,153 @@
                 </c:otherwise>
             </c:choose>
         }
+        
+
+ 
+ /* 
+        $("#startDate, #endDate").on("change", function() {
+            var startDate = new Date($("#startDate").val());
+            var endDate = new Date($("#endDate").val());
+            var totalPrice1 = $('#totalPrice1');
+            var totalPrice2 = $('#totalPrice2');
+            var price = "${item.room_price}";
+            price = price.replace(',', '');
+
+            // Get today's date
+            var today = new Date();
+
+            if (endDate < startDate) {
+                alert("종료 날짜는 시작 날짜보다 이전 날짜일 수 없습니다.");
+                $("#endDate").val(""); // endDate 입력란을 비우는 예시
+            } else if (startDate < today || endDate < today) {
+                alert("오늘 이전 날짜는 선택할 수 없습니다.");
+                $("#startDate").val(""); // startDate 입력란을 비우는 예시
+                $("#endDate").val(""); // endDate 입력란을 비우는 예시
+            } else {
+                // 두 날짜 간의 일 수 차이 계산
+                var timeDifference = endDate - startDate;
+                var daysDifference = timeDifference / (1000 * 60 * 60 * 24); // 밀리초 단위를 일 단위로 변환
+
+                $("#count").text(daysDifference);
+
+                var formattedPrice = (price * daysDifference).toLocaleString(); // 천단위 컴마 추가
+                $("#totalPrice1").text(formattedPrice);
+                $("#totalPrice2").text(formattedPrice);
+            }
+        }); */
+        
+        
+        $("#startDate, #endDate").on("change", function() {
+            var startDate = new Date($("#startDate").val());
+            var endDate = new Date($("#endDate").val());
+            var totalPrice1 = $('#totalPrice1');
+            var totalPrice2 = $('#totalPrice2');
+            var price = "${item.room_price}";
+            price = price.replace(',', '');
+
+            // Get today's date
+            var today = new Date();
+
+            if (endDate < startDate) {
+                alert("체크아웃 날짜는 체크인 날짜보다 이전 날짜일 수 없습니다.");
+                $("#endDate").val(""); // endDate 입력란을 비우는 예시
+            } else if (startDate < today || endDate < today) {
+                alert("날짜를 확인하고 다시 선택해주세요.");
+                $("#startDate").val(""); // startDate 입력란을 비우는 예시
+                $("#endDate").val(""); // endDate 입력란을 비우는 예시
+            } else if (startDate.getTime() === endDate.getTime()) {
+                alert("체크인 날짜와 체크아웃 날짜는 같을 수 없습니다.");
+                $("#endDate").val(""); // endDate 입력란을 비우는 예시
+            } else {
+                // 두 날짜 간의 일 수 차이 계산
+                var timeDifference = endDate - startDate;
+                var daysDifference = timeDifference / (1000 * 60 * 60 * 24); // 밀리초 단위를 일 단위로 변환
+
+                $("#count").text(daysDifference);
+
+                var formattedPrice = (price * daysDifference).toLocaleString(); // 천단위 컴마 추가
+                $("#totalPrice1").text(formattedPrice);
+                $("#totalPrice2").text(formattedPrice);
+            }
+        });
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        // 예약날짜 지정
+        
+        $(document).ready(function(){
+/* 	$("#startDate").datepicker({
+		
+				dateFormat: 'yy-mm-dd' //달력 날짜 형태
+	           ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+	           ,showMonthAfterYear:true // 월- 년 순서가아닌 년도 - 월 순서
+	           ,changeYear: true //option값 년 선택 가능
+	           ,changeMonth: true //option값  월 선택 가능                
+	           ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+	           ,buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" //버튼 이미지 경로
+	           ,buttonImageOnly: true //버튼 이미지만 깔끔하게 보이게함
+	           ,buttonText: "선택" //버튼 호버 텍스트              
+	           ,yearSuffix: "년" //달력의 년도 부분 뒤 텍스트
+	           ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+	           ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip
+	           ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 텍스트
+	           ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 Tooltip
+	           ,minDate: "-5Y" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+	           ,maxDate: "+5Y" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)  
+	
+		,onClose: function(){
+			var startDate = $("#startDate").datepicker('getDate');
+			var endDate = $("#endDate").datepicker('getDate');
+			
+				if (endDate != null) {
+					if (startDate > endDate) {
+						alert("기간을 다시 설정해주세요. \n종료일로 설정됩니다.");
+						$("#startDate").val($("#endDate").val());
+					}  
+				}
+			}
+	});
+	
+	$("#endDate").datepicker({
+		
+        	 dateFormat: 'yy-mm-dd' //달력 날짜 형태
+            ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            ,showMonthAfterYear:true // 월- 년 순서가아닌 년도 - 월 순서
+            ,changeYear: true //option값 년 선택 가능
+            ,changeMonth: true //option값  월 선택 가능                
+            ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            ,buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" //버튼 이미지 경로
+            ,buttonImageOnly: true //버튼 이미지만 깔끔하게 보이게함
+            ,buttonText: "선택" //버튼 호버 텍스트              
+            ,yearSuffix: "년" //달력의 년도 부분 뒤 텍스트
+            ,monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 텍스트
+            ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip
+            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 텍스트
+            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 Tooltip
+            ,minDate: "-5Y" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            ,maxDate: "+5Y" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)  
+		
+		,beforeShow: function() {
+			//get date startDate is set to
+			var startDate = $("#startDate").datepicker('getDate');
+			//if a date was selected else do nothing 
+			if (startDate != null) {
+				$(this).datepicker('option', 'minDate', startDate);
+			}
+		}
+	}); */
+});
+        
+        
+        
+        
         
      
  

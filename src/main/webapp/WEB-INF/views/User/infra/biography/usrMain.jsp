@@ -69,8 +69,6 @@
             <h2>쉼,<br></h2>
             <h2>공간</h2>
         </div>
-        
-              
             <c:forEach items="${list}" var="list" varStatus="status">
         		<a href="/introduceBNB?seq=<c:out value = '${list.seq}'/>" class="figure" data-aos="zoom-out" data-aos-duration="700">
         		<%-- <button class="detailBtn" onclick="location.href='/roomsXdmForm?seq=<c:out value = '${list.seq}'/>'"> --%>
